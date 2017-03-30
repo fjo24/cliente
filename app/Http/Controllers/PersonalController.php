@@ -10,9 +10,8 @@ class PersonalController extends Controller
 
     public function index(Request $request)
     {
-     
-      
-        return view('hr.personal.index');
+$personal = Personal::orderBy('PERSON_ID', 'ASC');
+        return view('hr.personal.index')->with('personal', $personal);
     }
 
     /**
@@ -40,12 +39,6 @@ class PersonalController extends Controller
         return redirect()->route('hr.personal.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -61,7 +54,6 @@ class PersonalController extends Controller
     {
         //
     }
-
 
     public function update(Request $request, $id)
     {
