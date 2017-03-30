@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Personal;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 
 class PersonalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Request $request)
     {
-                return view('hr.personal.index');
+     
+      
+        return view('hr.personal.index');
     }
 
     /**
@@ -36,7 +33,11 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $personal = new Personal($request->all());
+        $personal->save();
+
+        return redirect()->route('hr.personal.index');
     }
 
     /**
@@ -61,13 +62,7 @@ class PersonalController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
