@@ -185,9 +185,7 @@
                                                                 </input>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="email">
-                                                                    Celular
-                                                                </label>
+                                                                <label for="email">Celular</label>
                                                                 <input class="form-control" id="TELEF2" name="TELEF2" placeholder=""
                                                                        required="required" type="text">
                                                                 </input>
